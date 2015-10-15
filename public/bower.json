@@ -1,0 +1,36 @@
+{
+  "name": "QuranMediaPlayer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mtalhajamil/PiLabs",
+  "authors": [
+    "mtalhajamil <mtalhajamil93@gmail.com>"
+  ],
+  "description": "Quran Media Player Website",
+  "main": "app.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "keywords": [
+    "quranmedia"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "fullpage.js": "~2.7.2",
+    "angular-audio": "~1.7.1"
+  }
+}

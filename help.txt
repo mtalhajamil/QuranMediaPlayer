@@ -1,0 +1,6 @@
+npm init
+
+//npm is node package manager
+
+npm install body-parser --save
+npm install monk --save

@@ -1,0 +1,100 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+ body {
+ 	padding: 0;
+    margin: 0; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+ }
+
+ footer {
+ 	margin: 50px 0;
+ }
+
+ @font-face {
+ 	font-family: 'me_quran';
+ 	src: url('../fonts/me_quran.ttf') format('truetype');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+ .ayatView{
+ 	font-family: 'me_quran';
+ 	font-size: 40px;
+ 	line-height: 250%;
+ 	text-align: right;
+ 	cursor: url(../cursor.ico) 25 15, auto;
+
+ }
+
+ .ayatNumber{
+ 	font-family: "Traditional Arabic","Times New Roman";
+ 	font-size: 50px;
+ 	text-align: right;
+ 	line-height: 250%;
+
+ 	cursor: url(../cursor.ico) 25 15, auto;
+ }
+
+ .ayatNames{
+ 	font-family: 'me_quran';
+ 	font-size: 20px;
+ 	text-align: right;
+ 	line-height: 200%;
+ }
+
+ .audioButtons{
+ 	height: 40px;
+ 	width: 40px;
+ }
+
+ .ayatContainer{
+
+
+ 	/*cursor: url(../cursor.ico), auto;*/
+ }
+
+ .firstPage{
+ 	background-image: url('../img/section1.jpg');
+
+ }
+
+ .centerDiv{
+ 	margin:0 auto;
+ 	width:100%;
+ 	text-align: center;
+ 	background-color: rgba(0,0,0,0.8);
+ 	color: rgba(255,255,255,1);
+ 	font-size: 3em;
+ 	font-family: fantasy;
+ }
+
+ .audioPanel{
+ 	background-color: rgba(0,0,0,.5);
+ 	position: fixed;
+ 	bottom: 0;
+ 	margin: 0;
+ 	padding: 10px;
+ 	width: 95%;
+ 	color: #ffffff;
+ }
+
+ .floatLeft{
+ 	float: left;
+ 	
+ 	padding: 0;
+ 	margin: 0;
+ }
+
+ .pageHeader{
+ 	width: 100%;
+ 	height: 200px;
+ 	background-image: url('../img/header.jpg');
+ }
+
+ .inputClass{
+ 	width: 20%;
+ }
+

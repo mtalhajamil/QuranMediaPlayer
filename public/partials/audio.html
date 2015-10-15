@@ -1,0 +1,8 @@
+<div>
+  <audio media-player="audio1" data-playlist="playlist1">
+    <source src="http://quranacademy.me/MEDIA/VerseByVerse/Media_01/01_098_004.wma" type="audio/wma">
+  </audio>
+  <span ng-show="audio1.playing">Player status: Playing</span>
+  <span ng-show="!audio1.playing">Player status: Paused</span>
+  <button ng-click="mySpecialPlayButton()">Play</button>
+</div>
