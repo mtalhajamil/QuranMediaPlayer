@@ -75,7 +75,7 @@
       <span ng-repeat="ayat in ayaatList | filter: search" class="{{ayat.class}}" ng-attr-id="{{ 'ayat-' + $index }}">
         <span  data-role="{{ayat.Abs_Ref}}" ng-click="startAudio(ayat.SurahNo,ayat.AiyahNo,ayat.TotalAyah)" class="ayatView">
           {{ayat.TanzilText}}
-          <span class="ayatNumber">﴿{{ayat.Ano}}﴾<span style=" visibility: hidden;">ا</span></span><span ng-bind-html="newLine"></span>
+          <span class="ayatNumber">﴿{{ayat.Ano}}﴾<span style="visibility: hidden;">ا</span></span><span ng-bind-html="newLine"></span>
         </span>
       </span>
 
@@ -100,13 +100,9 @@
           <img src="img/mute.png" class="audioButtons" ng-click='audio.muting = !audio.muting'/>
         </td>
         <td>
-          Volume
-        </td>
-        <td>
           <input class='form-control inputClass' type=range min=0 max=1 step=0.01 ng-model='audio.volume'>      
         </td>
-        <td>
-          Progress
+        <td style="color:black; font-weight:800;"><span style="visibility: hidden;">sp</span>Progress:</b><span style="visibility: hidden;">sp</span>
         </td>
         <td>
           <input class='form-control' type=range min=0 max=1 step=0.01 ng-model='audio.progress'>

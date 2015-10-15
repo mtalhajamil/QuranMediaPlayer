@@ -45,6 +45,7 @@ controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice) 
   var previous = [];
   var htmlString = "";
   $scope.selectedSpeakerNo = "01";
+  $scope.selectedSpeakerName = "Dr Israr Ahmed";
 
   $scope.speakers = [{"name":"Dr Israr Ahmed","cat":"01"}, {"name":"Hafiz Akif Saeed","cat":"02"}, {"name":"Engr Naveed Ahmed","cat":"03"}];
 
