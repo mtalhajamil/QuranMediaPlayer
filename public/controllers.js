@@ -33,7 +33,7 @@ controller('registerController', function($scope,ergastAPIservice) {
   }
 
 }).
-controller('ayatViewController', function($scope,ngAudio,ergastAPIservice) {
+controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice) {
 
 
   var stream = '';
@@ -42,8 +42,25 @@ controller('ayatViewController', function($scope,ngAudio,ergastAPIservice) {
   var SurahNumber = 0;
   var TotalAyah = "7";
   var check = 1;
+  var previous = [];
+  var htmlString = "";
+  $scope.selectedSpeakerNo = "01";
 
+  $scope.speakers = [{"name":"Dr Israr Ahmed","cat":"01"}, {"name":"Hafiz Akif Saeed","cat":"02"}, {"name":"Engr Naveed Ahmed","cat":"03"}];
 
+  $scope.dropboxitemselected = function (cat,name) {
+    $scope.selectedSpeakerNo = cat;
+    $scope.selectedSpeakerName = name;
+  }
+
+  $scope.changeLayout = function(){
+    if(htmlString == "")
+      htmlString = "<br />";
+    else
+      htmlString = "";
+
+    $scope.newLine  = $sce.trustAsHtml(htmlString);
+  }
 
   $scope.startAudio = function(SNo,ANo,TAyah){
 
@@ -52,7 +69,19 @@ controller('ayatViewController', function($scope,ngAudio,ergastAPIservice) {
     SurahNumber = SNo;
 
     stream = convertToLink('01',SNo,ANo);
-    
+
+    for(i=0;i<previous.length;i++){
+      $scope.ayaatList[previous[i]].class = "notSelectedAyat";
+      console.log(previous[i]); 
+    }
+
+    previous = [];
+
+    $scope.ayaatList[AyatNumber - 1].class = "selectedAyat";
+    previous.push(AyatNumber - 1);
+
+
+
     //alert(UrlExists(stream));
 
     if(UrlExists(stream)){
@@ -60,49 +89,56 @@ controller('ayatViewController', function($scope,ngAudio,ergastAPIservice) {
       $scope.audio = ngAudio.play(stream);
     }
     else{
-       alert("Audio For Ayat Number: " + ANo + " Is Not Available, Move To Next" );
-    }
+     alert("Audio For Ayat Number: " + ANo + " Is Not Available, Move To Next" );
+     //playnext(AyatNumber);
+   }
 
-  }
+ }
 
-  function UrlExists(url)
-  {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false)
-    http.send();
-    return http.status!=404;
-  }
+ function UrlExists(url)
+ {
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false)
+  http.send();
+  return http.status!=404;
+}
 
 
-  $scope.$watch(function(){
-    if($scope.audio.remaining == 0 && check == 1){
 
-      check = 0;
-      if((AyatNumber + 1) > parseInt(TotalAyah))
-        alert("End Of Surah");
-      else{
-        
-        playnext(AyatNumber);
-      }
-    }
-  });
+$scope.$watch(function(){
+  if($scope.audio.remaining == 0 && check == 1){
 
-  function playnext(ANo){
-    AyatNumber += 1;
-    ANo += 1
-    stream = convertToLink('01',SurahNumber,ANo);
-
-    if(UrlExists(stream)){
-      $scope.audio.pause();
-      $scope.audio = ngAudio.play(stream);
-    }
+    check = 0;
+    if((AyatNumber + 1) > parseInt(TotalAyah))
+      alert("End Of Surah");
     else{
-      alert("Audio For Ayat Number: " + ANo + " Is Not Available, Move To Next" );
-      //playnext(AyatNumber);
+
+      playnext(AyatNumber);
+
     }
+  }
+});
 
-    
+function playnext(ANo){
 
+  $scope.ayaatList[AyatNumber - 1].class = "notSelectedAyat";
+  
+
+  AyatNumber += 1;
+  ANo += 1
+  stream = convertToLink(SurahNumber,ANo);
+
+  $scope.ayaatList[AyatNumber - 1].class = "selectedAyat";
+  previous.push(AyatNumber - 1);
+
+  if(UrlExists(stream)){
+    $scope.audio.pause();
+    $scope.audio = ngAudio.play(stream);
+  }
+  else{
+   alert("Audio For Ayat Number: " + ANo + " Is Not Available, Move To Next" );
+
+ }
     //alert("File Not Available")
 
     check = 1;
@@ -112,8 +148,12 @@ controller('ayatViewController', function($scope,ngAudio,ergastAPIservice) {
     return ('000' + val).substr(-3);
   }
 
-  function convertToLink(cat,SNo,ANo){
-    return 'media/Media_' + cat + '/01_' + convertTo3Digit(SNo) + "_" + convertTo3Digit(ANo) + ".mp3";
+  function getCat(){
+    return $scope.selectedSpeakerNo;
+  }
+
+  function convertToLink(SNo,ANo){
+    return 'media/Media_' + getCat() + '/01_' + convertTo3Digit(SNo) + "_" + convertTo3Digit(ANo) + ".mp3";
   }
 
   //$scope.audio = ngAudio.load('http://data.tanzeem.info/AUDIOS/01_-_Dars-e-Quran/000_Ayat-e-Bismillah/Ayat-e-Bismillah.mp3');

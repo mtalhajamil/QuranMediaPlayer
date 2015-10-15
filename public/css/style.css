@@ -1,12 +1,8 @@
-/*!
- * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+@charset "utf-8";
 
  body {
  	padding: 0;
-    margin: 0; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+ 	margin: 0; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
  }
 
  footer {
@@ -24,19 +20,33 @@
  	font-family: 'me_quran';
  	font-size: 40px;
  	line-height: 250%;
- 	text-align: right;
+ 	text-align: justify;
+ 	direction:rtl;
  	cursor: url(../cursor.ico) 25 15, auto;
+ 	unicode-bidi: bidi-override;
 
  }
 
  .ayatNumber{
  	font-family: "Traditional Arabic","Times New Roman";
  	font-size: 50px;
- 	text-align: right;
+ 	text-align: justify;
+ 	direction:rtl;
  	line-height: 250%;
-
  	cursor: url(../cursor.ico) 25 15, auto;
+ 	unicode-bidi: bidi-override;
+
  }
+
+ .selectedAyat{
+ 	color: #2ca4ab;
+ }
+
+ .notSelectedAyat{
+ 	color: black;
+ }
+
+ 
 
  .ayatNames{
  	font-family: 'me_quran';
@@ -56,19 +66,9 @@
  	/*cursor: url(../cursor.ico), auto;*/
  }
 
- .firstPage{
- 	background-image: url('../img/section1.jpg');
-
- }
 
  .centerDiv{
- 	margin:0 auto;
- 	width:100%;
- 	text-align: center;
- 	background-color: rgba(0,0,0,0.8);
- 	color: rgba(255,255,255,1);
- 	font-size: 3em;
- 	font-family: fantasy;
+
  }
 
  .audioPanel{
@@ -98,3 +98,32 @@
  	width: 20%;
  }
 
+
+ #firstPage{   
+ 	width:100%;
+ 	height:100%;
+ 	background-image:url("../img/section1.jpg");
+ 	background-size:100% auto;
+ 	background-repeat: no-repeat;
+
+ }
+
+ #firstPage a{   
+ 	margin:0 auto;
+ 	width:100%;
+ 	text-align: center;
+ 	background-color: #2ca4ab;
+ 	color: rgba(255, 255, 255, .5);
+ 	font-size: 5.9vw;
+ 	font-family: Aclonica;
+
+ }
+
+ #secondPage{   
+ 	width:100%;
+ 	height:100%;
+ 	background-image:url("../img/section2.jpg");
+ 	background-size:100% auto;
+ 	background-repeat: no-repeat;
+
+ }
