@@ -1,18 +1,5 @@
 /*angular.module('QuranMediaPlayer.controllers', ['mediaPlayer'],[]).*/
 angular.module('QuranMediaPlayer.controllers',[]).
-controller('audioController', function($scope) {
-
-
- // access properties
-
- $scope.mySpecialPlayButton = function () {
-  $scope.customText = 'I started angular-media-player with a custom defined action!';
-  $scope.audio1.playPause();
-};
-
-
-
-}).
 controller('indexController', function($scope,$location,$window) {
 
 
@@ -26,14 +13,7 @@ controller('fullPageController', function($scope,ergastAPIservice) {
 });
 
 }).
-controller('registerController', function($scope,ergastAPIservice) {
-
-  $scope.register = function() {
-    ergastAPIservice.sendRegisteration($scope.formData);
-  }
-
-}).
-controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice) {
+controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice,$location,$anchorScroll) {
 
 
   var stream = '';
@@ -44,10 +24,19 @@ controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice) 
   var check = 1;
   var previous = [];
   var htmlString = "";
+  $scope.surahName = "الفاتحة";
+  $scope.toggleClass = "ayatNameContainer";
   $scope.selectedSpeakerNo = "01";
-  $scope.selectedSpeakerName = "Dr Israr Ahmed";
+  $scope.selectedSpeakerName = "ڈاکٹر اسرار احمد";
 
-  $scope.speakers = [{"name":"Dr Israr Ahmed","cat":"01"}, {"name":"Hafiz Akif Saeed","cat":"02"}, {"name":"Engr Naveed Ahmed","cat":"03"}];
+  $scope.speakers = [{"name":"ڈاکٹر اسرار احمد","cat":"01"}, {"name":"حافظ عاکف سعید","cat":"02"}, {"name":"انجینئیر نوید احمد","cat":"03"}];
+
+  $scope.toggleHeight = function(){
+    if( $scope.toggleClass == "ayatNameContainer")
+      $scope.toggleClass = "ayatNameContainerClosed";
+    else
+      $scope.toggleClass = "ayatNameContainer";
+  }
 
   $scope.dropboxitemselected = function (cat,name) {
     $scope.selectedSpeakerNo = cat;
@@ -69,7 +58,7 @@ controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice) 
     AyatNumber = parseInt(ANo);
     SurahNumber = SNo;
 
-    stream = convertToLink('01',SNo,ANo);
+    stream = convertToLink(SNo,ANo);
 
     for(i=0;i<previous.length;i++){
       $scope.ayaatList[previous[i]].class = "notSelectedAyat";
@@ -123,11 +112,18 @@ $scope.$watch(function(){
 function playnext(ANo){
 
   $scope.ayaatList[AyatNumber - 1].class = "notSelectedAyat";
-  
+
+
+  var old = $location.hash();
+  $location.hash('ayat-' + AyatNumber);
+  $anchorScroll();
+  $location.hash(old);
 
   AyatNumber += 1;
   ANo += 1
   stream = convertToLink(SurahNumber,ANo);
+
+
 
   $scope.ayaatList[AyatNumber - 1].class = "selectedAyat";
   previous.push(AyatNumber - 1);
@@ -159,18 +155,34 @@ function playnext(ANo){
 
   //$scope.audio = ngAudio.load('http://data.tanzeem.info/AUDIOS/01_-_Dars-e-Quran/000_Ayat-e-Bismillah/Ayat-e-Bismillah.mp3');
 
-  $scope.surahDisplay = function(surahNo){
+  function renderAyatNoFromHTML(res){
+      for (var i = res.length - 1; i >= 0; i--) {
+        var first =  res[i].Ano.substr(0,7);
+        var second = res[i].Ano.substr(7,7);
+        var third = res[i].Ano.substr(14,7);
+
+        var sum = third + second + first; 
+
+
+        res[i].Ano = $sce.trustAsHtml(sum)
+      };
+      return res;
+  }
+
+  $scope.surahDisplay = function(surahNo,surahName){
     ergastAPIservice.getAyaat(surahNo).success(function(res){
-      $scope.ayaatList = res;
+      //console.log(res);
+      $scope.ayaatList = renderAyatNoFromHTML(res);
     });
+
+    $scope.surahName =  surahName;
   }
 
   $scope.ayaatList = [];
   $scope.surahList = [];
 
   ergastAPIservice.getAyaat("1").success(function(res){
-      //alert("loaded");
-      $scope.ayaatList = res;
+      $scope.ayaatList = renderAyatNoFromHTML(res);
     });
 
   ergastAPIservice.getSurahNames().success(function(res){

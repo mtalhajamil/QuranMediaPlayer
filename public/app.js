@@ -7,8 +7,6 @@ angular.module('QuranMediaPlayer',[
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.
  when("/fullPage", {templateUrl: "partials/fullPage.html", controller: "fullPageController"}).
- when("/register", {templateUrl: "partials/register.html", controller: "registerController"}).
  when("/ayatView", {templateUrl: "partials/ayatView.html", controller: "ayatViewController"}).
- when("/audio", {templateUrl: "partials/audio.html", controller: "audioController"}).
  otherwise({redirectTo: '/fullPage'});
 }]);

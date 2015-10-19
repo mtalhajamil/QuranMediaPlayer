@@ -3,6 +3,9 @@
  body {
  	padding: 0;
  	margin: 0; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+ 	background-image: url('../img/navback.jpg');
+ 	direction: rtl;
+ 	text-align: right;
  }
 
  footer {
@@ -16,43 +19,81 @@
  	font-style: normal;
  }
 
+@font-face {
+ 	font-family: 'Jameel_Noori';
+ 	src: url('../fonts/Jameel Noori Nastaleeq.ttf') format('truetype');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+@font-face {
+ 	font-family: 'ScheherazadeRegOT';
+ 	src: url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+@font-face {
+ 	font-family: 'QCF_BSML';
+ 	src: url('../fonts/QCF_BSML.ttf') format('truetype');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+
+ 
+
  .ayatView{
  	font-family: 'me_quran';
  	font-size: 40px;
  	line-height: 250%;
- 	text-align: justify;
- 	direction:rtl;
- 	cursor: url(../cursor.ico) 25 15, auto;
+
+ 	cursor: url(../cursor.ico) 50 50, auto;
  	unicode-bidi: bidi-override;
 
  }
 
  .ayatNumber{
- 	font-family: "Traditional Arabic","Times New Roman";
- 	font-size: 50px;
- 	text-align: justify;
- 	direction:rtl;
+ 	font-family: 'me_quran';
+ 	font-size: 40px;
+ 	text-align:center;
+ 	direction:ltr;
  	line-height: 250%;
  	cursor: url(../cursor.ico) 25 15, auto;
- 	unicode-bidi: bidi-override;
+ }
 
+ .ayatNameContainer{
+ 	text-align:center;
+ 	height: 82vh;
+ 	overflow: auto;
+
+ }
+ 
+ .ayatNames{
+ 	font-family: 'me_quran';
+ 	font-size: 20px;
+ 	text-align: right;
+ 	line-height: 200%;
  }
 
  .selectedAyat{
- 	color: #2ca4ab;
+ 	color: #6D4D24;
  }
 
  .notSelectedAyat{
  	color: black;
  }
 
- 
+ .navbrand{
+ 	font-family: 'Jameel_Noori';
+ 	font-size: 29px;
+ }
 
- .ayatNames{
- 	font-family: 'me_quran';
- 	font-size: 20px;
- 	text-align: right;
- 	line-height: 200%;
+ .dropdownChange{
+ 	font-family: 'Jameel_Noori';
+ 	font-size: 27px;
+ 	cursor: pointer;
+ 	
  }
 
  .audioButtons{
@@ -61,9 +102,15 @@
  }
 
  .ayatContainer{
+ 	height: 82vh;
+ 	overflow: auto;
+ 	padding: 0 0 70px 0;
+ }
 
 
- 	/*cursor: url(../cursor.ico), auto;*/
+ .ayatNameContainerClosed{
+ 	height: 0vh;
+ 	overflow: auto;
  }
 
 
@@ -72,13 +119,14 @@
  }
 
  .audioPanel{
- 	background-color: rgba(44, 164, 171, .7);
+ 	background-color: rgba(124,95,53,0.5);
  	position: fixed;
- 	bottom: 0;
- 	margin: 0;
- 	padding: 10px;
- 	width: 95%;
+ 	bottom: 3vh;
+ 	padding: 10px 10px 10px 20px;
+ 	width: 100vw;
  	color: #ffffff;
+ 	font-family: "Traditional Arabic","Times New Roman";
+ 	direction: ltr;
  }
 
  .floatLeft{
@@ -96,6 +144,36 @@
 
  .inputClass{
  	width: 20%;
+ }
+
+ .speakerButton{
+ 	background-color: transparent;
+ 	border: none;
+ 	color: white;
+ 	font-family: 'Jameel_Noori';
+ 	font-size: 25px;
+ }
+
+ .speakerButton:hover{
+ 	background-color:  #6D4D24;
+ 	color: white;
+ 	font-family: 'Jameel_Noori';
+ 	font-size: 25px;
+ }
+
+ .centerTop{
+ 	font-family: 'ScheherazadeRegOT';
+ 	color: white;
+ 	font-size: 5vw;
+ 	margin: 0 auto 0 auto;
+ 	height: 50px;
+ }
+
+ .bismillah{
+ 	height: 100px;
+ 	text-align: center;
+ 	display: block;
+    margin: 10px auto 10px auto;
  }
 
 

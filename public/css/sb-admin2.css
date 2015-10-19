@@ -7,24 +7,24 @@
 
 
 body {
-    background-color: #f8f8f8;
+    background-color: rgba(44, 164, 171, 1);
 }
 
 #wrapper {
     width: 100%;
+    background-image: url('../img/navback.jpg');
 }
 
 #page-wrapper {
     padding: 0 15px;
-    min-height: 568px;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,.9);
 }
 
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 150px;
-        padding: 0 30px;
+        margin: 0 150px 0 0;
+        /*padding: 0 30px;*/
         border-left: 1px solid #e7e7e7;
     }
 }
@@ -97,7 +97,7 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid #279399;
+    border-bottom: 1px solid #6D4D24;
 }
 
 .sidebar ul li a.active {
@@ -134,7 +134,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 150px;
-        margin-top: 51px;
+        margin: 55px 0 0 0;
     }
 
     .navbar-top-links .dropdown-messages,
