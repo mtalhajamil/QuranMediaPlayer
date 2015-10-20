@@ -6,10 +6,8 @@ controller('indexController', function($scope,$location,$window) {
 }).
 controller('fullPageController', function($scope,ergastAPIservice) {
 
- $(document).ready(function() {
-  $('#fullpage').fullpage();
-
-
+$(document).ready(function() {
+    $('#fullpage').fullpage();
 });
 
 }).
@@ -156,17 +154,17 @@ function playnext(ANo){
   //$scope.audio = ngAudio.load('http://data.tanzeem.info/AUDIOS/01_-_Dars-e-Quran/000_Ayat-e-Bismillah/Ayat-e-Bismillah.mp3');
 
   function renderAyatNoFromHTML(res){
-      for (var i = res.length - 1; i >= 0; i--) {
-        var first =  res[i].Ano.substr(0,7);
-        var second = res[i].Ano.substr(7,7);
-        var third = res[i].Ano.substr(14,7);
+    for (var i = res.length - 1; i >= 0; i--) {
+      var first =  res[i].Ano.substr(0,7);
+      var second = res[i].Ano.substr(7,7);
+      var third = res[i].Ano.substr(14,7);
 
-        var sum = third + second + first; 
+      var sum = third + second + first; 
 
 
-        res[i].Ano = $sce.trustAsHtml(sum)
-      };
-      return res;
+      res[i].Ano = $sce.trustAsHtml(sum)
+    };
+    return res;
   }
 
   $scope.surahDisplay = function(surahNo,surahName){
@@ -182,8 +180,8 @@ function playnext(ANo){
   $scope.surahList = [];
 
   ergastAPIservice.getAyaat("1").success(function(res){
-      $scope.ayaatList = renderAyatNoFromHTML(res);
-    });
+    $scope.ayaatList = renderAyatNoFromHTML(res);
+  });
 
   ergastAPIservice.getSurahNames().success(function(res){
     $scope.surahList = res;

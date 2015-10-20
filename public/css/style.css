@@ -12,6 +12,51 @@
  	margin: 50px 0;
  }
 
+/*@font-face {
+	font-family:'me_quran';
+	src: url('../fonts/me_quran_gdi.eot');
+	src: url('../fonts/me_quran_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/me_quran_gdi.woff') format('woff'),
+		url('../fonts/me_quran_gdi.ttf') format('truetype'),
+		url('../fonts/me_quran_gdi.svg#me_quran-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+000D-200E;
+}*/
+
+/*
+
+@font-face {
+    font-family: 'QCF_BSML';
+    src: url('../fonts/qcf_bsml-webfont.eot');
+    src: url('../fonts/qcf_bsml-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/qcf_bsml-webfont.woff2') format('woff2'),
+         url('../fonts/qcf_bsml-webfont.woff') format('woff'),
+         url('../fonts/qcf_bsml-webfont.ttf') format('truetype'),
+         url('../fonts/qcf_bsml-webfont.svg#qcf_bsmlregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'ScheherazadeRegOT';
+    src: url('../fonts/scheherazaderegot-webfont.eot');
+    src: url('../fonts/scheherazaderegot-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/scheherazaderegot-webfont.woff2') format('woff2'),
+         url('../fonts/scheherazaderegot-webfont.woff') format('woff'),
+         url('../fonts/scheherazaderegot-webfont.ttf') format('truetype'),
+         url('../fonts/scheherazaderegot-webfont.svg#scheherazaderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+
  @font-face {
  	font-family: 'me_quran';
  	src: url('../fonts/me_quran.ttf') format('truetype');

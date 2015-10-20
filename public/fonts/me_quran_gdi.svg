@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="me_quran-Regular" horiz-adv-x="2048">
+<font-face underline-position="-147" font-weight="400" descent="-410" panose-1="2 6 6 3 5 6 5 2 2 4" units-per-em="2048" unicode-range="U+000D-200E" bbox="40 0 310 1550" underline-thickness="133" font-family="me_quran" ascent="1638"/>
+<missing-glyph/>
+<glyph glyph-name=".notdef"/>
+<glyph glyph-name=".null" horiz-adv-x="0"/>
+<glyph glyph-name="nonmarkingreturn" unicode=""/>
+<glyph glyph-name="space" horiz-adv-x="120" unicode=" "/>
+<glyph glyph-name="afii61664" horiz-adv-x="119" unicode="‌" d="M79 0h-39v1449h39v-1449z"/>
+<glyph glyph-name="afii301" horiz-adv-x="324" unicode="‍" d="M284 1331l-27 -26l-77 75v-1380h-39v1379l-74 -74l-27 26l94 96l-94 95l27 26l93 -95l97 95l27 -26l-97 -95z"/>
+<glyph glyph-name="afii299" horiz-adv-x="350" unicode="‎" d="M310 1427l-123 -122l-28 28l78 75h-158v-1408h-39v1449h193l-74 73l28 28z"/>
+</font>
+</defs>
+</svg>
