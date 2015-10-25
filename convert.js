@@ -1,6 +1,6 @@
 xlsxj = require("xlsx-to-json");
   xlsxj({
-    input: "data2.xlsx", 
+    input: "data.xlsx", 
     output: "output.json"
   }, function(err, result) {
     if(err) {

@@ -3876,7 +3876,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav {
   padding: 0 0 0 0;
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
   list-style: none;
 }
 .nav > li {
@@ -4069,7 +4069,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -4396,8 +4396,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  /*background-color: #2ca4ab;*/
-  background-image: url('../img/navback.jpg');
+  background-color: rgba(0,0,0,.5);
+  /*background-image: url('../img/navback.jpg');*/
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

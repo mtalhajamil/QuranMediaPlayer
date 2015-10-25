@@ -1,0 +1,80 @@
+<!-- Custom Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/creative.css" type="text/css">
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="fontJameelNoori navbar-brand page-scroll" href="#page-top">قرآن میڈیا پلیئر</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="/#/fullPage#search">Search</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/#/fullPage#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+    <section class="bg-primary" id="search">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Search</h2>
+                    <hr class="light">
+                    <p class="text-faded">Type in arabic & search in quran</p>
+                    <input style="height:60px" ng-model="filter" placeholder="Search" class="form-control" type="text" />
+                    <!-- <br />       
+                    <a href="#/search" ng-click="search()" class="btn btn-default btn-xl">Search In Quran</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" style="background-color:white">
+        <div class="container" ng-repeat="ayat in ayaatList | filter: search">
+            <div class="row">
+                    <span  class="{{ayat.class}}" ng-attr-id="{{ 'ayat-' + $index}}">
+                      <span data-role="{{ayat.Abs_Ref}}" ng-click="startAudio(ayat.SurahNo,ayat.AiyahNo,ayat.TotalAyah)" class="ayatView">
+                        {{ayat.TanzilText}}﴿<span ng-bind-html="ayat.Ano"></span>﴾
+                    </span>
+                </span>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <br /><br /><br />
+</section>
+
+
+
+
+</body>

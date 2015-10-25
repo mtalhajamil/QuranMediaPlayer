@@ -4,11 +4,45 @@ controller('indexController', function($scope,$location,$window) {
 
 
 }).
-controller('fullPageController', function($scope,ergastAPIservice) {
+controller('fullPageController', function($scope,ergastAPIservice,searchService) {
 
-$(document).ready(function() {
-    $('#fullpage').fullpage();
-});
+  $scope.search = function(){
+    searchService.setSearchString($scope.searchString);
+    //console.log($scope.searchString);
+  }
+
+}).
+controller('searchController', function($scope,$sce,ergastAPIservice,searchService) {
+
+  $scope.filter = searchService.getSearchString();
+
+
+  function renderAyatNoFromHTML(res){
+    for (var i = res.length - 1; i >= 0; i--) {
+      var first =  res[i].Ano.substr(0,7);
+      var second = res[i].Ano.substr(7,7);
+      var third = res[i].Ano.substr(14,7);
+
+      var sum = third + second + first; 
+
+
+      res[i].Ano = $sce.trustAsHtml(sum)
+    };
+    return res;
+  }
+
+  $scope.ayaatList = [];
+  ergastAPIservice.getAllAyaat().success(function(res){
+    console.log(res);
+    $scope.ayaatList = renderAyatNoFromHTML(res);
+  });
+
+  $scope.search = function (ayat) {
+    if($scope.filter == "")
+      return $scope.filter;
+    var keyword = new RegExp($scope.filter, 'i');
+    return !$scope.filter || keyword.test(ayat.UniText);
+  };
 
 }).
 controller('ayatViewController', function($scope,$sce,ngAudio,ergastAPIservice,$location,$anchorScroll) {
