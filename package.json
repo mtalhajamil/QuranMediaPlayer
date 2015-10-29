@@ -1,17 +1,35 @@
 {
-  "name": "start_server",
+  "name": "quranmediaplayer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Quran Mediaplayer",
   "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bower": "^1.6.5",
+    "express": "^4.13.3",
+    "monk": "^1.0.1",
+    "xlsx-to-json": "^0.2.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "TJ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtalhajamil/QuranMediaPlayer.git"
+  },
+  "keywords": [
+    "quran",
+    "media",
+    "player",
+    "israr",
+    "akif",
+    "naveed"
+  ],
+  "author": "Muhammad Talha Jamil",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.13.1",
-    "express": "^4.12.4",
-    "monk": "^1.0.1",
-    "xlsx-to-json": "^0.2.4"
-  }
+  "bugs": {
+    "url": "https://github.com/mtalhajamil/QuranMediaPlayer/issues"
+  },
+  "homepage": "https://github.com/mtalhajamil/QuranMediaPlayer#readme"
 }

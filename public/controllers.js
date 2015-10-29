@@ -40,8 +40,10 @@ controller('searchController', function($scope,$sce,ergastAPIservice,searchServi
   $scope.search = function (ayat) {
     if($scope.filter == "")
       return $scope.filter;
-    var keyword = new RegExp($scope.filter, 'i');
-    return !$scope.filter || keyword.test(ayat.UniText);
+    else{
+      var keyword = new RegExp($scope.filter, 'i');
+      return !$scope.filter || keyword.test(ayat.UniText);
+    }
   };
 
 }).

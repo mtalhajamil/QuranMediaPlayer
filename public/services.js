@@ -19,21 +19,21 @@ factory('ergastAPIservice', function($http,$location,$window,$rootScope) {
   ergastAPI.getAyaat = function(surahNo) {
     return $http({
       method: 'GET', 
-      url: 'http://localhost:3030/getAyaat/'+surahNo
+      url: '/getAyaat/'+surahNo
     });
   }
 
   ergastAPI.getSurahNames = function() {
     return $http({
       method: 'GET', 
-      url: 'http://localhost:3030/getSurahNames'
+      url: '/getSurahNames'
     });
   }
 
   ergastAPI.getAllAyaat = function() {
     return $http({
       method: 'GET', 
-      url: 'http://localhost:3030/getAllAyaat'
+      url: '/getAllAyaat'
     });
   }
 
