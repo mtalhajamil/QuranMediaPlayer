@@ -1,3 +1,4 @@
+
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -4397,7 +4398,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: rgba(0,0,0,.5);
-  /*background-image: url('../img/navback.jpg');*/
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

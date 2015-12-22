@@ -1,3 +1,4 @@
+<div id="spin"></div>
 <div id="wrapper">
   <nav class="navbar navbar-default navbar-static-top " role="navigation" >
     <div class="navbar-header">
@@ -41,7 +42,7 @@
      <div class="row ayatContainer" >
       <div class="col-lg-12">
         <div>
-          <img class="bismillah" src="../img/bismillah.png">
+          <img class="bismillah" id="bismillah"  src="../img/bismillah.png">
         </div>
         <span ng-repeat="ayat in ayaatList | filter: search" class="{{ayat.class}}" ng-attr-id="{{ 'ayat-' + $index}}">
           <span data-role="{{ayat.Abs_Ref}}" ng-click="startAudio(ayat.SurahNo,ayat.AiyahNo,ayat.TotalAyah)" class="ayatView">

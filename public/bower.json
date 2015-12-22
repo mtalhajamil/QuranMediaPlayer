@@ -31,6 +31,7 @@
     "angular-route": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
     "fullpage.js": "~2.7.2",
-    "angular-audio": "~1.7.1"
+    "angular-audio": "~1.7.1",
+    "angular-websql": "~1.0.2"
   }
 }

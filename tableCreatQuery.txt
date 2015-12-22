@@ -1,0 +1,1 @@
+tx.executeSql("CREATE TABLE IF NOT EXISTS Ayat([Arbaa] Text,[RecordNo] Text,[SurahNo] Text,[AiyahNo] Text,[Ano] Text,[SurahName] Text,[UniText] Text,[Rasm_e_Imlai] Text,[TanzilText] Text,[IndoPakText] Text,[TotalAyah] Text,[ParahNo] Text,[Ruku] Text,[RukuSurah] Text,[RukuParah] Text,[Hizb] Text,[HizbPart] Text,[Manzil] Text");
