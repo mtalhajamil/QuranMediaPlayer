@@ -10,4 +10,7 @@ angular.module('QuranMediaPlayer', [
       when("/ayatView", { templateUrl: "partials/ayatView.html", controller: "ayatViewController" }).
       when("/search", { templateUrl: "partials/search.html", controller: "searchController" }).
       otherwise({ redirectTo: '/fullPage' });
-  }]);
+  }])
+  .config(function ($httpProvider) {
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  });

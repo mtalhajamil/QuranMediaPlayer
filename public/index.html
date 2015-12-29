@@ -23,7 +23,7 @@
 
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin2.css" rel="stylesheet">
     <link href="css/spinner.css" rel="stylesheet">
     
@@ -32,8 +32,8 @@
 
 </head>
 
-<body ng-app="QuranMediaPlayer">
-    
+<body ng-app="QuranMediaPlayer" ng-controller="indexController">
+    <div id="spin"></div>
     <ng-view></ng-view>
 </body>
 
