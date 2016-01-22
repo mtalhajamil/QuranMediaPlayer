@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="css/creative.css" type="text/css">
 
 <body id="page-top">
-
+<div id="spin"></div>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,7 +70,7 @@
                 مشتمل ہے۔ اس میں بنیادی طور پر قرآنی آیات کے ساتھ ضوتی ترجمے اور تشریح کو منسلک کر دیا گیا ہے۔ یعنی
                 اسکرین پر نظر آنے والی کسی بہی آیت پر کلک کرنے پر اس آیت کا کیا گیا ترجمہ اور تشریح سماعت فرمائیں گے۔
             </p>
-            <a href="#/ayatView" class="btn btn-primary btn-xl page-scroll">Go To Quran Media Player</a>
+            <a href="#/ayatView" class="btn btn-primary btn-xl page-scroll">{{buttonDisplayText}}</a>
 
         </div>
     </div>
@@ -87,7 +87,7 @@
                 <input style="height:60px" ng-model="searchString" placeholder="Search" class="form-control"
                        type="text"/>
                 <br/>
-                <a href="#/search" ng-click="search()" class="btn btn-default btn-xl">Search In Quran</a>
+                <a href="#/search" ng-click="search()" class="btn btn-default btn-xl">Search</a>
             </div>
         </div>
     </div>
